@@ -1,0 +1,7 @@
+{
+  "api_key": "sk-134e0c63cf1741d1b7756c0358567f4d",
+  "model": "deepseek-chat",
+  "timeout": 120,
+  "section_size": 50,
+  "custom_patterns": []
+}
