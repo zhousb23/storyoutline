@@ -28,8 +28,12 @@ jobs:
           buildozer android debug
 
 
-      - name: Build APK
-        run: buildozer android debug
+           - name: Build APK
+        run: |
+          export ANDROID_SDK_ROOT=/home/runner/.buildozer/android/platform/android-sdk
+          yes | $ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses --sdk_root=$ANDROID_SDK_ROOT
+          buildozer android debug
+
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
