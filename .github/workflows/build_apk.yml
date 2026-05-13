@@ -7,31 +7,20 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    container: kivy/buildozer
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip openjdk-17-jdk-headless unzip zip \
-            autoconf automake libtool libtool-bin pkg-config libltdl-dev
-          pip install buildozer cython pillow requests
 
       - name: Copy entry
         run: cp src/kivy_app.py main.py
 
       - name: Build APK
         run: buildozer android debug
-        timeout-minutes: 35
+        timeout-minutes: 40
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: StoryOutline-APK
-          path: bin/*.apk
+          path: /home/user/app/bin/*.apk
