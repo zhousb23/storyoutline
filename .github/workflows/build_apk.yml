@@ -22,8 +22,11 @@ jobs:
           sudo apt-get install -y python3-pip openjdk-17-jdk-headless unzip zip
           pip install buildozer cython pillow requests
 
-      - name: Copy entry
-        run: cp src/kivy_app.py main.py
+           - name: Build APK
+        run: |
+          yes | /home/runner/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses --sdk_root=/home/runner/.buildozer/android/platform/android-sdk 2>/dev/null || true
+          buildozer android debug
+
 
       - name: Build APK
         run: buildozer android debug
