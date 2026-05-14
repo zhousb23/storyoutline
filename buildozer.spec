@@ -17,7 +17,6 @@ orientation = portrait
 fullscreen = 0
 log_level = 2
 
-main.py = src/kivy_app.py
 
 [buildozer]
 log_level = 2
