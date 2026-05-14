@@ -5,7 +5,7 @@ package.domain = com.storyoutline
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,json,txt
 version = 1.0.0
-requirements = python3,kivy==2.3.1,kivymd==2.0.0,requests,chardet,python-docx,lxml,pdfplumber,pillow,beautifulsoup4,ebooklib
+requirements = python3,kivy==2.3.1,kivymd==2.0.0,requests,chardet
 presplash.color = #F0F6FB
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 android.api = 31
